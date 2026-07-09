@@ -38,9 +38,9 @@ if (!$data) {
 
 <div class="col-lg-8">
 
-<div class="card shadow border-0 rounded-4">
+<div class="card card-glass shadow border-0 rounded-4">
 
-<div class="card-header bg-warning text-dark rounded-top-4">
+<div class="card-header bg-success text-white rounded-top-4">
 
 <h3 class="mb-0">
 

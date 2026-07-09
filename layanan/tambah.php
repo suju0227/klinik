@@ -13,7 +13,7 @@ include "../layout/header.php";
 
 <div class="container-fluid py-4">
 
-<div class="card shadow border-0 rounded-4">
+<div class="card card-glass shadow border-0 rounded-4">
 
     <div class="card-header bg-success text-white">
 

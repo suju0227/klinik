@@ -17,7 +17,7 @@ include "../layout/header.php";
 
 <div class="col-lg-8">
 
-<div class="card shadow border-0 rounded-4">
+<div class="card card-glass shadow border-0 rounded-4">
 
 <div class="card-header bg-success text-white rounded-top-4">
 
