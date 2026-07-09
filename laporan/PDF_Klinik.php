@@ -29,16 +29,18 @@ class PDF_Klinik extends FPDF
             $this->Image($logo,10,8,22);
         }
 
+        global $settings;
+
         $this->SetFont('Arial','B',18);
-        $this->Cell($contentWidth,8,'KLINIK YAKUSA',0,1,'C');
+        $this->Cell($contentWidth,8,strtoupper($settings['nama_klinik']),0,1,'C');
 
         $this->SetFont('Arial','',11);
         $this->Cell($contentWidth,6,'Sistem Manajemen Klinik',0,1,'C');
 
         $this->SetFont('Arial','',10);
-        $this->Cell($contentWidth,5,'Jl. Iman Ilmu Amal No.1947 ',0,1,'C');
+        $this->Cell($contentWidth,5,$settings['alamat'],0,1,'C');
 
-        $this->Cell($contentWidth,5,'Telp. 0856-5619-1731',0,1,'C');
+        $this->Cell($contentWidth,5,'Telp. ' . $settings['telepon'],0,1,'C');
 
         $this->Ln(2);
 

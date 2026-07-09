@@ -1,9 +1,7 @@
 <?php
 
-// Menentukan path assets otomatis
-$basePath = (dirname($_SERVER['PHP_SELF']) == '/klinik')
-    ? ''
-    : '../';
+// Menentukan path assets secara absolut untuk menghindari masalah relasi folder dan trailing slash
+$basePath = '/klinik/';
 
 ?>
 
@@ -16,7 +14,7 @@ $basePath = (dirname($_SERVER['PHP_SELF']) == '/klinik')
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sistem Manajemen Klinik</title>
+<title><?= htmlspecialchars($settings['nama_klinik']); ?> - Sistem Manajemen Klinik</title>
 
 <!-- Bootstrap -->
 

@@ -125,13 +125,13 @@ include "layout/header.php";
 
                         <br>
 
-                        <span>KLINIK YAKUSA</span>
+                        <span><?= strtoupper($settings['nama_klinik']); ?></span>
 
                     </h1>
 
                     <p class="hero-desc">
 
-                        Selamat datang di Sistem Manajemen Klinik Yakusa.
+                        Selamat datang di Sistem Manajemen <?= htmlspecialchars($settings['nama_klinik']); ?>.
 
                         Kelola data pasien, dokter, layanan, obat,
 
@@ -211,13 +211,13 @@ include "layout/header.php";
 
                             <i class="fas fa-hospital"></i>
 
-                            Klinik Yakusa
+                            <?= htmlspecialchars($settings['nama_klinik']); ?>
 
                         </h4>
 
                         <p>
 
-                            Jl. Imam Inlu Amal No.1947
+                            <?= htmlspecialchars($settings['alamat']); ?>
 
                         </p>
 
@@ -958,7 +958,7 @@ Belum ada aktivitas.
 
                         <i class="fas fa-hospital"></i>
 
-                        Klinik Yakusa
+                        <?= htmlspecialchars($settings['nama_klinik']); ?>
 
                     </h3>
 
@@ -981,7 +981,7 @@ Belum ada aktivitas.
 
                             <td><strong>Alamat</strong></td>
 
-                            <td>Jl. Imam Inlu Amal No.1947</td>
+                            <td><?= htmlspecialchars($settings['alamat']); ?></td>
 
                         </tr>
 
@@ -989,7 +989,7 @@ Belum ada aktivitas.
 
                             <td><strong>Telepon</strong></td>
 
-                            <td>0856-5619-1731</td>
+                            <td><?= htmlspecialchars($settings['telepon']); ?></td>
 
                         </tr>
 

@@ -23,7 +23,7 @@ $request = $_SERVER['REQUEST_URI'];
 
             <div class="brand-text">
 
-                <h3>KLINIK YAKUSA</h3>
+                <h3><?= strtoupper($settings['nama_klinik']); ?></h3>
 
                 <small>Management System</small>
 

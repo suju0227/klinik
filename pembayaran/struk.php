@@ -64,15 +64,15 @@ $pdf->Ln(22);
 
 $pdf->SetFont('Arial','B',12);
 
-$pdf->Cell(70,6,"KLINIK YAKUSA",0,1,'C');
+$pdf->Cell(70,6,strtoupper($settings['nama_klinik']),0,1,'C');
 
 $pdf->SetFont('Arial','',8);
 
 $pdf->Cell(70,4,"Sistem Manajemen Klinik",0,1,'C');
 
-$pdf->Cell(70,4,"Jl. Imam Inlu Amal No.1947",0,1,'C');
+$pdf->Cell(70,4,$settings['alamat'],0,1,'C');
 
-$pdf->Cell(70,4,"Telp. 0856-5619-1731",0,1,'C');
+$pdf->Cell(70,4,"Telp. " . $settings['telepon'],0,1,'C');
 
 $pdf->Ln(2);
 
