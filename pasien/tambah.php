@@ -1,374 +1,182 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
+<?php
+include "../config/koneksi.php";
+include "../layout/header.php";
+?>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="wrapper">
 
-<title>Tambah Pasien</title>
+    <?php include "../layout/sidebar.php"; ?>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <div class="main">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <?php include "../layout/navbar.php"; ?>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <div class="container-fluid py-4">
 
-<style>
+            <div class="row justify-content-center">
 
-*{
-font-family:'Poppins',sans-serif;
-}
+                <div class="col-lg-8">
 
-body{
+                    <div class="card card-glass shadow border-0 rounded-4">
 
-height:100vh;
+                        <div class="card-header bg-success text-white rounded-top-4">
 
-background:linear-gradient(135deg,#4facfe,#00f2fe);
+                            <h3 class="mb-0">
 
-display:flex;
+                                <i class="fas fa-user-injured"></i>
 
-justify-content:center;
+                                Tambah Data Pasien
 
-align-items:center;
+                            </h3>
 
-overflow:hidden;
+                            <small>Silakan lengkapi seluruh data pasien di bawah ini.</small>
 
-}
+                        </div>
 
-/* Background Blur */
+                        <div class="card-body p-4">
 
-body::before{
+                            <form action="simpan.php" method="POST">
 
-content:"";
+                                <div class="row">
 
-position:absolute;
+                                    <div class="col-md-6 mb-3">
 
-width:500px;
+                                        <label class="form-label">Nama Pasien</label>
 
-height:500px;
+                                        <input type="text"
 
-background:#ffffff30;
+                                            name="nama_pasien"
 
-border-radius:50%;
+                                            class="form-control"
 
-top:-120px;
+                                            placeholder="Masukkan nama pasien"
 
-right:-100px;
+                                            required>
 
-filter:blur(90px);
+                                    </div>
 
-}
+                                    <div class="col-md-6 mb-3">
 
-body::after{
+                                        <label class="form-label">Jenis Kelamin</label>
 
-content:"";
+                                        <select
 
-position:absolute;
+                                            name="jenis_kelamin"
 
-width:450px;
+                                            class="form-select"
 
-height:450px;
+                                            required>
 
-background:#ffffff20;
+                                            <option value="">-- Pilih --</option>
 
-border-radius:50%;
+                                            <option>Laki-laki</option>
 
-bottom:-120px;
+                                            <option>Perempuan</option>
 
-left:-100px;
+                                        </select>
 
-filter:blur(100px);
+                                    </div>
 
-}
+                                </div>
 
-/* Card */
+                                <div class="row">
 
-.card-glass{
+                                    <div class="col-md-6 mb-3">
 
-position:relative;
+                                        <label class="form-label">Umur</label>
 
-z-index:10;
+                                        <input
 
-width:750px;
+                                            type="number"
 
-background:rgba(255,255,255,.18);
+                                            name="umur"
 
-backdrop-filter:blur(15px);
+                                            class="form-control"
 
-border:1px solid rgba(255,255,255,.3);
+                                            placeholder="Masukkan umur"
 
-border-radius:25px;
+                                            required>
 
-padding:35px;
+                                    </div>
 
-box-shadow:0 20px 40px rgba(0,0,0,.18);
+                                    <div class="col-md-6 mb-3">
 
-animation:fade .8s;
+                                        <label class="form-label">No HP</label>
 
-}
+                                        <input
 
-@keyframes fade{
+                                            type="text"
 
-from{
+                                            name="no_hp"
 
-opacity:0;
+                                            class="form-control"
 
-transform:translateY(40px);
+                                            placeholder="08xxxxxxxxxx"
 
-}
+                                            required>
 
-to{
+                                    </div>
 
-opacity:1;
+                                </div>
 
-transform:translateY(0);
+                                <div class="mb-4">
 
-}
+                                    <label class="form-label">Alamat</label>
 
-}
+                                    <textarea
 
-h2{
+                                        name="alamat"
 
-font-weight:700;
+                                        rows="4"
 
-color:white;
+                                        class="form-control"
 
-}
+                                        placeholder="Masukkan alamat lengkap"
 
-p{
+                                        required></textarea>
 
-color:white;
+                                </div>
 
-opacity:.9;
+                                <div class="d-grid gap-2 d-md-flex justify-content-end">
 
-}
+                                    <a href="index.php"
 
-label{
+                                        class="btn btn-secondary">
 
-font-weight:500;
+                                        <i class="fas fa-arrow-left"></i>
 
-color:white;
+                                        Kembali
 
-margin-bottom:5px;
+                                    </a>
 
-}
+                                    <button
 
-.form-control,
+                                        type="submit"
 
-.form-select{
+                                        class="btn btn-success">
 
-border:none;
+                                        <i class="fas fa-save"></i>
 
-border-radius:12px;
+                                        Simpan Data
 
-padding:12px;
+                                    </button>
 
-}
+                                </div>
 
-.form-control:focus,
+                            </form>
 
-.form-select:focus{
+                        </div>
 
-box-shadow:0 0 10px rgba(255,255,255,.7);
+                    </div>
 
-}
+                </div>
 
-.btn{
+            </div>
 
-border-radius:12px;
+        </div>
 
-padding:12px;
-
-font-weight:600;
-
-}
-
-.btn-success{
-
-background:#16a34a;
-
-border:none;
-
-}
-
-.btn-success:hover{
-
-background:#15803d;
-
-}
-
-.btn-secondary{
-
-background:#64748b;
-
-border:none;
-
-}
-
-.icon{
-
-font-size:45px;
-
-color:white;
-
-margin-bottom:10px;
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="card-glass">
-
-<div class="text-center mb-4">
-
-<div class="icon">
-
-<i class="bi bi-person-plus-fill"></i>
+    </div>
 
 </div>
 
-<h2>Tambah Data Pasien</h2>
-
-<p>Silakan lengkapi seluruh data pasien di bawah ini.</p>
-
-</div>
-
-<form action="simpan.php" method="POST">
-
-<div class="row">
-
-<div class="col-md-6 mb-3">
-
-<label>Nama Pasien</label>
-
-<input type="text"
-
-name="nama_pasien"
-
-class="form-control"
-
-placeholder="Masukkan nama pasien"
-
-required>
-
-</div>
-
-<div class="col-md-6 mb-3">
-
-<label>Jenis Kelamin</label>
-
-<select
-
-name="jenis_kelamin"
-
-class="form-select"
-
-required>
-
-<option value="">-- Pilih --</option>
-
-<option>Laki-laki</option>
-
-<option>Perempuan</option>
-
-</select>
-
-</div>
-
-</div>
-
-<div class="row">
-
-<div class="col-md-6 mb-3">
-
-<label>Umur</label>
-
-<input
-
-type="number"
-
-name="umur"
-
-class="form-control"
-
-placeholder="Masukkan umur"
-
-required>
-
-</div>
-
-<div class="col-md-6 mb-3">
-
-<label>No HP</label>
-
-<input
-
-type="text"
-
-name="no_hp"
-
-class="form-control"
-
-placeholder="08xxxxxxxxxx"
-
-required>
-
-</div>
-
-</div>
-
-<div class="mb-4">
-
-<label>Alamat</label>
-
-<textarea
-
-name="alamat"
-
-rows="4"
-
-class="form-control"
-
-placeholder="Masukkan alamat lengkap"
-
-required></textarea>
-
-</div>
-
-<div class="d-grid gap-2 d-md-flex justify-content-end">
-
-<a href="index.php"
-
-class="btn btn-secondary">
-
-<i class="bi bi-arrow-left-circle"></i>
-
-Kembali
-
-</a>
-
-<button
-
-type="submit"
-
-class="btn btn-success">
-
-<i class="bi bi-save-fill"></i>
-
-Simpan Data
-
-</button>
-
-</div>
-
-</form>
-
-</div>
-
-</body>
-
-</html>
+<?php include "../layout/footer.php"; ?>
