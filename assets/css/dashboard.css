@@ -1,0 +1,1745 @@
+/* =====================================================
+   DASHBOARD V3
+   KLINIK YAKUSA
+   Author : Ahmad Rifai
+===================================================== */
+
+/* =====================================================
+                ROOT
+===================================================== */
+
+:root{
+
+    --primary:#16a34a;
+
+    --primary-dark:#15803d;
+
+    --secondary:#0f172a;
+
+    --success:#22c55e;
+
+    --danger:#ef4444;
+
+    --warning:#f59e0b;
+
+    --info:#0ea5e9;
+
+    --purple:#7c3aed;
+
+    --gray:#64748b;
+
+    --light:#f8fafc;
+
+    --white:#ffffff;
+
+    --shadow:
+
+        0 15px 35px rgba(0,0,0,.08);
+
+}
+
+/* =====================================================
+                CONTAINER
+===================================================== */
+
+.container-fluid{
+
+    animation:fadeDashboard .6s ease;
+
+}
+
+@keyframes fadeDashboard{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+                HERO
+===================================================== */
+
+.hero-dashboard{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #16a34a,
+
+    #22c55e
+
+    );
+
+    border-radius:30px;
+
+    padding:45px;
+
+    color:#fff;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+
+    0 25px 60px rgba(22,163,74,.30);
+
+}
+
+/* efek lingkaran */
+
+.hero-dashboard::before{
+
+    content:"";
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    position:absolute;
+
+    right:-80px;
+
+    top:-80px;
+
+}
+
+.hero-dashboard::after{
+
+    content:"";
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.07);
+
+    position:absolute;
+
+    left:-50px;
+
+    bottom:-50px;
+
+}
+
+/* =====================================================
+                BADGE
+===================================================== */
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 18px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(12px);
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.hero-badge i{
+
+    font-size:15px;
+
+}
+
+/* =====================================================
+                TITLE
+===================================================== */
+
+.hero-title{
+
+    font-size:48px;
+
+    font-weight:700;
+
+    margin-top:20px;
+
+    line-height:1.2;
+
+}
+
+.hero-title span{
+
+    color:#dcfce7;
+
+}
+
+/* =====================================================
+                DESCRIPTION
+===================================================== */
+
+.hero-desc{
+
+    margin-top:20px;
+
+    max-width:650px;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    opacity:.95;
+
+}
+
+/* =====================================================
+                INFO
+===================================================== */
+
+.hero-info{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+
+}
+
+.hero-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:rgba(255,255,255,.14);
+
+    backdrop-filter:blur(15px);
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+}
+
+.hero-item:hover{
+
+    transform:translateY(-6px);
+
+    background:rgba(255,255,255,.22);
+
+}
+
+.hero-item i{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.20);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+}
+
+.hero-item h4{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.hero-item small{
+
+    opacity:.9;
+
+}
+
+/* =====================================================
+                CLOCK
+===================================================== */
+
+.hero-clock{
+
+    background:rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    backdrop-filter:blur(15px);
+
+    text-align:center;
+
+}
+
+.hero-clock h1{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    margin:10px 0;
+
+}
+
+.hero-clock h5{
+
+    margin-bottom:5px;
+
+}
+
+.hero-clock h4{
+
+    margin-top:15px;
+
+    font-weight:700;
+
+}
+
+.hero-clock p{
+
+    margin-bottom:20px;
+
+    opacity:.9;
+
+}
+
+.hero-clock hr{
+
+    border-color:rgba(255,255,255,.20);
+
+}
+/* =====================================================
+            PREMIUM STATISTICS CARD
+===================================================== */
+
+.stats-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    min-height:185px;
+
+    color:#fff;
+
+    transition:.35s ease;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
+}
+
+.stats-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
+
+}
+
+/* Glow Effect */
+
+.stats-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    right:-70px;
+
+    top:-70px;
+
+}
+
+.stats-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    left:-40px;
+
+    bottom:-40px;
+
+}
+
+/* =====================================
+        HEADER
+===================================== */
+
+.stats-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.stats-label{
+
+    display:block;
+
+    font-size:14px;
+
+    letter-spacing:.8px;
+
+    opacity:.9;
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+
+}
+
+.stats-header h2{
+
+    font-size:44px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+.stats-header h4{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+/* =====================================
+        ICON
+===================================== */
+
+.stats-icon{
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(10px);
+
+    font-size:30px;
+
+}
+
+.stats-icon i{
+
+    color:#fff;
+
+}
+
+/* =====================================
+        FOOTER
+===================================== */
+
+.stats-footer{
+
+    margin-top:30px;
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    opacity:.95;
+
+}
+
+.stats-footer i{
+
+    margin-right:8px;
+
+}
+
+/* =====================================
+        WARNA CARD
+===================================== */
+
+.card-pasien{
+
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+
+}
+
+.card-dokter{
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+}
+
+.card-layanan{
+
+    background:linear-gradient(135deg,#7c3aed,#8b5cf6);
+
+}
+
+.card-obat{
+
+    background:linear-gradient(135deg,#f59e0b,#fbbf24);
+
+}
+
+.card-periksa{
+
+    background:linear-gradient(135deg,#0891b2,#06b6d4);
+
+}
+
+.card-pendapatan{
+
+    background:linear-gradient(135deg,#111827,#374151);
+
+}
+
+/* =====================================
+        BADGE ANIMATION
+===================================== */
+
+.stats-card:hover .stats-icon{
+
+    transform:rotate(-10deg) scale(1.08);
+
+    transition:.35s;
+
+}
+
+.stats-card:hover h2,
+
+.stats-card:hover h4{
+
+    transform:scale(1.05);
+
+    transition:.35s;
+
+}
+/* =====================================================
+            FINANCE CARD
+===================================================== */
+
+.finance-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    color:#fff;
+
+    min-height:155px;
+
+    display:flex;
+
+    align-items:center;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.finance-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 55px rgba(0,0,0,.15);
+
+}
+
+.finance-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    right:-60px;
+
+    top:-60px;
+
+}
+
+.finance-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    left:-25px;
+
+    bottom:-25px;
+
+}
+
+/* ==========================================
+        ICON
+========================================== */
+
+.finance-icon{
+
+    width:75px;
+
+    height:75px;
+
+    min-width:75px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    margin-right:22px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(12px);
+
+}
+
+.finance-icon i{
+
+    color:#fff;
+
+}
+
+/* ==========================================
+        CONTENT
+========================================== */
+
+.finance-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.finance-content small{
+
+    display:block;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+    opacity:.9;
+
+    text-transform:uppercase;
+
+}
+
+.finance-content h2{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin:8px 0;
+
+}
+
+.finance-content span{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    opacity:.95;
+
+}
+
+.finance-content span i{
+
+    font-size:14px;
+
+}
+
+/* ==========================================
+        WARNA
+========================================== */
+
+.finance-card.success{
+
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+
+}
+
+.finance-card.primary{
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+}
+
+.finance-card.danger{
+
+    background:linear-gradient(135deg,#dc2626,#ef4444);
+
+}
+
+/* =====================================================
+                CHART CARD
+===================================================== */
+
+.chart-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.chart-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 25px 55px rgba(0,0,0,.12);
+
+}
+
+/* ==========================================
+        HEADER
+========================================== */
+
+.chart-header{
+
+    padding:25px 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-bottom:1px solid #eef2f7;
+
+}
+
+.chart-header h4{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.chart-header small{
+
+    color:#64748b;
+
+}
+
+.chart-badge{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:24px;
+
+}
+
+/* ==========================================
+        BODY
+========================================== */
+
+.chart-body{
+
+    padding:30px;
+
+    height:430px;
+
+    position:relative;
+
+}
+
+.chart-body canvas{
+
+    width:100% !important;
+
+    height:100% !important;
+
+}
+
+/* ==========================================
+        ANIMATION
+========================================== */
+
+.finance-card:hover .finance-icon{
+
+    transform:rotate(-10deg) scale(1.08);
+
+    transition:.35s;
+
+}
+
+.chart-card:hover .chart-badge{
+
+    transform:rotate(12deg);
+
+    transition:.35s;
+
+}
+/* =====================================================
+                TIMELINE ACTIVITY
+===================================================== */
+
+.activity-card{
+
+    background:#ffffff;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    height:100%;
+
+    transition:.35s;
+
+}
+
+.activity-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 25px 55px rgba(0,0,0,.12);
+
+}
+
+/* ==========================================
+        JUDUL SECTION
+========================================== */
+
+.section-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.section-title h4{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.section-title small{
+
+    color:#64748b;
+
+}
+
+/* ==========================================
+        TIMELINE
+========================================== */
+
+.timeline{
+
+    position:relative;
+
+    padding-left:25px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:16px;
+
+    top:0;
+
+    bottom:0;
+
+    width:3px;
+
+    background:#d1fae5;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:28px;
+
+    padding-left:35px;
+
+}
+
+.timeline-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+.timeline-icon{
+
+    position:absolute;
+
+    left:-8px;
+
+    top:4px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 10px 20px rgba(22,163,74,.30);
+
+}
+
+.timeline-content{
+
+    background:#f8fafc;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    transition:.3s;
+
+}
+
+.timeline-content:hover{
+
+    background:#f0fdf4;
+
+    transform:translateX(5px);
+
+}
+
+.timeline-content h6{
+
+    margin:0;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.timeline-content p{
+
+    margin:8px 0;
+
+    color:#475569;
+
+}
+
+.timeline-content small{
+
+    display:block;
+
+    color:#16a34a;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.timeline-content span{
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+}
+
+/* =====================================================
+                QUICK MENU
+===================================================== */
+
+.quick-card-container{
+
+    background:#ffffff;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.quick-box{
+
+    display:block;
+
+    text-align:center;
+
+    background:#ffffff;
+
+    border-radius:22px;
+
+    padding:28px 20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+    transition:.35s;
+
+    border:1px solid #eef2f7;
+
+    color:#111827;
+
+}
+
+.quick-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+    color:#16a34a;
+
+}
+
+.quick-icon{
+
+    width:75px;
+
+    height:75px;
+
+    margin:auto;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:30px;
+
+    margin-bottom:18px;
+
+    transition:.35s;
+
+}
+
+.quick-box:hover .quick-icon{
+
+    transform:rotate(-10deg) scale(1.08);
+
+}
+
+.quick-box h5{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.quick-box p{
+
+    color:#64748b;
+
+    font-size:14px;
+
+    margin:0;
+
+}
+
+/* =====================================================
+                CLINIC CARD
+===================================================== */
+
+.clinic-card{
+
+    margin-top:10px;
+
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+
+    color:#fff;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:0 18px 40px rgba(15,23,42,.35);
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.clinic-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    right:-80px;
+
+    top:-80px;
+
+}
+
+.clinic-card h3{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.clinic-card h3 i{
+
+    color:#22c55e;
+
+    margin-right:10px;
+
+}
+
+.clinic-card p{
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+}
+
+.clinic-card table{
+
+    color:#fff;
+
+}
+
+.clinic-card table td{
+
+    padding:8px 0;
+
+    border:none;
+
+}
+
+.clinic-card .badge{
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+/* =====================================================
+                RESPONSIVE
+===================================================== */
+
+@media (max-width:1400px){
+
+.hero-title{
+
+    font-size:42px;
+
+}
+
+.stats-header h2{
+
+    font-size:38px;
+
+}
+
+.finance-content h2{
+
+    font-size:26px;
+
+}
+
+}
+
+@media (max-width:1200px){
+
+.hero-dashboard{
+
+    padding:35px;
+
+}
+
+.hero-info{
+
+    gap:15px;
+
+}
+
+.hero-item{
+
+    flex:1 1 45%;
+
+}
+
+.chart-body{
+
+    height:360px;
+
+}
+
+}
+
+@media (max-width:992px){
+
+.hero-dashboard{
+
+    text-align:center;
+
+}
+
+.hero-info{
+
+    justify-content:center;
+
+}
+
+.hero-clock{
+
+    margin-top:30px;
+
+}
+
+.stats-card{
+
+    min-height:165px;
+
+}
+
+.finance-card{
+
+    margin-bottom:20px;
+
+}
+
+.chart-body{
+
+    height:320px;
+
+}
+
+.clinic-card{
+
+    text-align:center;
+
+}
+
+.clinic-card table{
+
+    margin-top:20px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.hero-dashboard{
+
+    padding:28px;
+
+}
+
+.hero-title{
+
+    font-size:32px;
+
+}
+
+.hero-desc{
+
+    font-size:15px;
+
+}
+
+.hero-item{
+
+    width:100%;
+
+}
+
+.hero-clock h1{
+
+    font-size:42px;
+
+}
+
+.stats-header h2{
+
+    font-size:32px;
+
+}
+
+.stats-header h4{
+
+    font-size:20px;
+
+}
+
+.finance-content h2{
+
+    font-size:22px;
+
+}
+
+.chart-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.chart-body{
+
+    height:280px;
+
+}
+
+.quick-box{
+
+    padding:24px 18px;
+
+}
+
+.timeline{
+
+    padding-left:15px;
+
+}
+
+.timeline-item{
+
+    padding-left:28px;
+
+}
+
+.timeline-icon{
+
+    width:42px;
+
+    height:42px;
+
+    left:-5px;
+
+}
+
+}
+
+@media (max-width:576px){
+
+.hero-dashboard{
+
+    border-radius:22px;
+
+    padding:22px;
+
+}
+
+.hero-title{
+
+    font-size:28px;
+
+}
+
+.hero-badge{
+
+    font-size:12px;
+
+}
+
+.hero-item{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.hero-item i{
+
+    margin-bottom:10px;
+
+}
+
+.hero-clock{
+
+    padding:25px;
+
+}
+
+.hero-clock h1{
+
+    font-size:34px;
+
+}
+
+.stats-card{
+
+    min-height:auto;
+
+    padding:22px;
+
+}
+
+.finance-card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.finance-icon{
+
+    margin-right:0;
+
+    margin-bottom:18px;
+
+}
+
+.chart-body{
+
+    height:250px;
+
+}
+
+.quick-icon{
+
+    width:65px;
+
+    height:65px;
+
+    font-size:26px;
+
+}
+
+.quick-box h5{
+
+    font-size:16px;
+
+}
+
+.quick-box p{
+
+    font-size:13px;
+
+}
+
+.clinic-card{
+
+    padding:25px;
+
+}
+
+}
+
+/* =====================================================
+                ANIMATION
+===================================================== */
+
+.stats-card,
+.finance-card,
+.chart-card,
+.activity-card,
+.quick-card-container,
+.quick-box,
+.clinic-card{
+
+    transition:all .35s ease;
+
+}
+
+.stats-card:hover,
+.finance-card:hover,
+.chart-card:hover,
+.activity-card:hover,
+.quick-box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* =====================================================
+                CUSTOM SCROLLBAR
+===================================================== */
+
+.timeline{
+
+    max-height:520px;
+
+    overflow-y:auto;
+
+    padding-right:10px;
+
+}
+
+.timeline::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.timeline::-webkit-scrollbar-track{
+
+    background:#f1f5f9;
+
+    border-radius:20px;
+
+}
+
+.timeline::-webkit-scrollbar-thumb{
+
+    background:#22c55e;
+
+    border-radius:20px;
+
+}
+
+.timeline::-webkit-scrollbar-thumb:hover{
+
+    background:#16a34a;
+
+}
+
+/* =====================================================
+                CARD EFFECT
+===================================================== */
+
+.chart-card,
+.activity-card,
+.quick-card-container{
+
+    border:1px solid #eef2f7;
+
+}
+
+.quick-box:hover{
+
+    border-color:#22c55e;
+
+}
+
+.timeline-content:hover{
+
+    box-shadow:0 12px 25px rgba(22,163,74,.10);
+
+}
+
+.clinic-card:hover{
+
+    transform:translateY(-6px);
+
+    transition:.35s;
+
+}
+
+/* =====================================================
+                BADGE
+===================================================== */
+
+.badge{
+
+    border-radius:20px;
+
+    font-weight:600;
+
+}
+
+/* =====================================================
+                CANVAS
+===================================================== */
+
+canvas{
+
+    user-select:none;
+
+}
+
+/* =====================================================
+                END
+===================================================== */

@@ -1,0 +1,823 @@
+/* ======================================================
+   SIDEBAR V4
+   KLINIK YAKUSA
+====================================================== */
+
+:root{
+
+    --sidebar-bg:#0f172a;
+
+    --sidebar-bg2:#111827;
+
+    --primary:#16a34a;
+
+    --primary-hover:#22c55e;
+
+    --text:#f8fafc;
+
+    --muted:#94a3b8;
+
+    --border:rgba(255,255,255,.08);
+
+    --hover:rgba(22,163,74,.15);
+
+    --active:#16a34a;
+
+}
+
+/* ==========================================
+                SIDEBAR
+========================================== */
+
+.sidebar{
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    width:250px;
+
+    height:100vh;
+
+    background:linear-gradient(
+        180deg,
+        var(--sidebar-bg),
+        var(--sidebar-bg2)
+    );
+
+    color:#fff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    box-shadow:
+    8px 0 35px rgba(15,23,42,.35);
+
+    z-index:999;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+            TOP
+========================================== */
+
+.sidebar-top{
+
+    padding:25px;
+
+}
+
+/* ==========================================
+            BRAND
+========================================== */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    margin-bottom:30px;
+
+}
+
+.brand:hover{
+
+    color:#fff;
+
+}
+
+.brand-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-hover)
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    box-shadow:
+    0 10px 25px rgba(22,163,74,.35);
+
+}
+
+.brand-text h3{
+
+    margin:0;
+
+    font-size:21px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+.brand-text small{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+/* ======================================================
+            PROFILE CARD
+====================================================== */
+
+.profile-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:28px;
+
+    transition:.35s;
+
+}
+
+.profile-card:hover{
+
+    background:rgba(22,163,74,.12);
+
+    border-color:rgba(22,163,74,.35);
+
+}
+
+.profile-avatar{
+
+    width:60px;
+
+    height:60px;
+
+    min-width:60px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:26px;
+
+    color:#fff;
+
+    box-shadow:
+    0 10px 25px rgba(22,163,74,.35);
+
+}
+
+.profile-info{
+
+    flex:1;
+
+}
+
+.profile-info h5{
+
+    margin:0;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.profile-info span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:6px;
+
+    color:#cbd5e1;
+
+    font-size:13px;
+
+}
+
+.profile-info span i{
+
+    color:#22c55e;
+
+    font-size:10px;
+
+}
+
+/* ======================================================
+                MENU
+====================================================== */
+
+.sidebar-menu{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.menu-title{
+
+    color:#64748b;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin:22px 0 12px;
+
+    padding-left:10px;
+
+}
+
+.sidebar-menu li{
+
+    margin-bottom:6px;
+
+}
+
+.sidebar-menu li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 18px;
+
+    border-radius:16px;
+
+    color:#e2e8f0;
+
+    text-decoration:none;
+
+    transition:.30s;
+
+    position:relative;
+
+    overflow:hidden;
+
+    font-weight:500;
+
+}
+
+.sidebar-menu li a i{
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    transition:.30s;
+
+}
+
+/* Hover */
+
+.sidebar-menu li a:hover{
+
+    background:rgba(22,163,74,.12);
+
+    color:#fff;
+
+    transform:translateX(6px);
+
+}
+
+.sidebar-menu li a:hover i{
+
+    color:#22c55e;
+
+}
+
+/* Active */
+
+.sidebar-menu li a.active{
+
+    background:linear-gradient(
+        90deg,
+        rgba(22,163,74,.22),
+        rgba(22,163,74,.08)
+    );
+
+    color:#fff;
+
+    font-weight:600;
+
+    border-left:4px solid #22c55e;
+
+}
+
+.sidebar-menu li a.active i{
+
+    color:#22c55e;
+
+}
+
+/* Ripple Glow */
+
+.sidebar-menu li a::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:50%;
+
+    right:-60px;
+
+    top:-40px;
+
+}
+/* ======================================================
+                SIDEBAR FOOTER
+====================================================== */
+
+.sidebar-footer{
+
+    padding:20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.02);
+
+    backdrop-filter:blur(12px);
+
+}
+
+.sidebar-divider{
+
+    width:100%;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+    margin-bottom:18px;
+
+}
+
+.footer-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:#e2e8f0;
+
+    text-decoration:none;
+
+    padding:14px 18px;
+
+    border-radius:16px;
+
+    transition:.35s;
+
+    font-weight:500;
+
+    margin-bottom:8px;
+
+}
+
+.footer-link i{
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+.footer-link:hover{
+
+    background:rgba(22,163,74,.12);
+
+    color:#fff;
+
+    transform:translateX(6px);
+
+}
+
+.footer-link:hover i{
+
+    color:#22c55e;
+
+}
+
+/* Logout */
+
+.logout{
+
+    color:#fca5a5;
+
+}
+
+.logout:hover{
+
+    background:rgba(239,68,68,.12);
+
+}
+
+.logout:hover i{
+
+    color:#ef4444;
+
+}
+
+/* ==========================================
+            VERSION
+========================================== */
+
+.sidebar-version{
+
+    margin-top:20px;
+
+    padding-top:18px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+}
+
+.sidebar-version strong{
+
+    display:block;
+
+    color:#ffffff;
+
+    font-size:14px;
+
+    font-weight:700;
+
+}
+
+.sidebar-version small{
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+}
+
+/* ==========================================
+            SCROLL MENU
+========================================== */
+
+.sidebar-menu{
+
+    max-height:calc(100vh - 340px);
+
+    overflow-y:auto;
+
+    padding-right:6px;
+
+}
+
+.sidebar-menu::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.sidebar-menu::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb:hover{
+
+    background:#22c55e;
+
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:260px;
+
+    left:-260px;
+
+    transition:.35s;
+
+}
+
+.sidebar.show{
+
+    left:0;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.brand-text h3{
+
+    font-size:18px;
+
+}
+
+.profile-avatar{
+
+    width:55px;
+
+    height:55px;
+
+    min-width:55px;
+
+}
+
+.profile-info h5{
+
+    font-size:15px;
+
+}
+
+.sidebar-menu li a{
+
+    padding:12px 15px;
+
+}
+
+}
+
+/* ==========================================
+            ANIMATION
+========================================== */
+
+.brand,
+
+.profile-card,
+
+.sidebar-menu li a,
+
+.footer-link{
+
+    transition:all .35s ease;
+
+}
+
+/* Glow Effect */
+
+.brand-icon{
+
+    animation:pulseLogo 3s infinite;
+
+}
+
+@keyframes pulseLogo{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(34,197,94,.35);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 25px rgba(34,197,94,.45);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(34,197,94,.35);
+
+    }
+
+}
+
+/* ==========================================
+            ACTIVE INDICATOR
+========================================== */
+
+.sidebar-menu li a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:15px;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    box-shadow:0 0 12px rgba(34,197,94,.8);
+
+}
+
+/* ==========================================
+            END SIDEBAR
+========================================== */
+
+/* ======================================================
+            SIDEBAR TOGGLE
+====================================================== */
+
+.main{
+
+    margin-left:250px;
+
+    transition:.35s ease;
+
+}
+
+/* Sidebar Collapse */
+
+.sidebar.collapsed{
+
+    width:85px;
+
+}
+
+/* Logo */
+
+.sidebar.collapsed .brand-text{
+
+    display:none;
+
+}
+
+/* Profile */
+
+.sidebar.collapsed .profile-info{
+
+    display:none;
+
+}
+
+.sidebar.collapsed .profile-card{
+
+    justify-content:center;
+
+}
+
+/* Menu */
+
+.sidebar.collapsed .menu-title{
+
+    display:none;
+
+}
+
+.sidebar.collapsed .sidebar-menu a span{
+
+    display:none;
+
+}
+
+.sidebar.collapsed .sidebar-menu a{
+
+    justify-content:center;
+
+    padding:15px;
+
+}
+
+.sidebar.collapsed .sidebar-menu a i{
+
+    margin:0;
+
+    font-size:20px;
+
+}
+
+/* Footer */
+
+.sidebar.collapsed .footer-link span{
+
+    display:none;
+
+}
+
+.sidebar.collapsed .sidebar-version{
+
+    display:none;
+
+}
+
+.sidebar.collapsed .footer-link{
+
+    justify-content:center;
+
+}
+
+/* Main */
+
+.main.expanded{
+
+    margin-left:85px;
+
+}
+
+/* ==========================================
+        MOBILE
+========================================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    left:-250px;
+
+}
+
+.sidebar.show{
+
+    left:0;
+
+}
+
+.main{
+
+    margin-left:0;
+
+}
+
+}

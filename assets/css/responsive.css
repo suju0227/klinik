@@ -1,0 +1,76 @@
+/* ===========================================
+        RESPONSIVE DASHBOARD
+=========================================== */
+
+/* Laptop 1366px */
+@media (max-width:1400px){
+
+    .stats-grid{
+        grid-template-columns:repeat(5,1fr);
+        gap:15px;
+    }
+
+    .sidebar{
+        width:220px;
+    }
+
+    .main{
+        margin-left:220px;
+    }
+
+}
+
+/* Laptop kecil */
+@media (max-width:1200px){
+
+    .stats-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+/* Tablet */
+@media (max-width:992px){
+
+    .sidebar{
+        width:90px;
+    }
+
+    .sidebar .logo-text,
+    .sidebar .profile-box,
+    .sidebar span{
+        display:none;
+    }
+
+    .main{
+        margin-left:90px;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* HP */
+@media (max-width:768px){
+
+    .sidebar{
+        position:fixed;
+        left:-260px;
+        transition:.3s;
+    }
+
+    .sidebar.active{
+        left:0;
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+}

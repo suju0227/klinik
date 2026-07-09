@@ -1,0 +1,131 @@
+<?php
+include "../config/koneksi.php";
+include "../layout/header.php";
+?>
+
+<div class="wrapper">
+
+<?php include "../layout/sidebar.php"; ?>
+
+<div class="main">
+
+<?php include "../layout/navbar.php"; ?>
+
+<div class="container-fluid py-4">
+
+<div class="card shadow border-0 rounded-4">
+
+    <div class="card-header bg-success text-white">
+
+        <h3 class="mb-0">
+
+            <i class="fas fa-hand-holding-medical"></i>
+
+            Tambah Data Layanan
+
+        </h3>
+
+        <small>
+
+            Silakan lengkapi data layanan pemeriksaan klinik.
+
+        </small>
+
+    </div>
+
+    <div class="card-body">
+
+        <form action="simpan.php" method="POST">
+
+            <!-- Nama Layanan -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Nama Layanan
+
+                </label>
+
+                <input
+                    type="text"
+                    name="nama_layanan"
+                    class="form-control"
+                    placeholder="Masukkan nama layanan"
+                    required>
+
+            </div>
+
+            <!-- Harga -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Harga
+
+                </label>
+
+                <input
+                    type="number"
+                    name="harga"
+                    class="form-control"
+                    placeholder="Masukkan harga layanan"
+                    min="0"
+                    required>
+
+            </div>
+
+            <!-- Keterangan -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Keterangan
+
+                </label>
+
+                <textarea
+                    name="keterangan"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Masukkan keterangan layanan"></textarea>
+
+            </div>
+
+            <!-- Tombol -->
+
+            <div class="d-flex justify-content-end">
+
+                <a href="index.php" class="btn btn-secondary me-2">
+
+                    <i class="fas fa-arrow-left"></i>
+
+                    Kembali
+
+                </a>
+
+                <button type="submit" class="btn btn-success">
+
+                    <i class="fas fa-save"></i>
+
+                    Simpan
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<?php include "../layout/footer.php"; ?>

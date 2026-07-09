@@ -1,0 +1,116 @@
+/* ==========================================
+   HALAMAN LAPORAN
+========================================== */
+
+.page-header{
+    background:#fff;
+    border-radius:18px;
+    padding:25px 30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    margin-bottom:30px;
+}
+
+.page-header h2{
+    font-weight:700;
+    color:#1e293b;
+}
+
+.page-header p{
+    color:#64748b;
+}
+
+/* Card */
+
+.report-card{
+    border-radius:20px;
+    transition:.35s;
+    overflow:hidden;
+}
+
+.report-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(0,0,0,.12)!important;
+}
+
+/* Isi card */
+
+.report-card .card-body{
+    padding:35px 25px;
+}
+
+/* Icon */
+
+.report-icon{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:auto;
+
+    color:white;
+
+    font-size:40px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
+
+}
+
+/* Judul */
+
+.report-card h4{
+
+    margin-top:20px;
+    font-weight:700;
+
+}
+
+/* Deskripsi */
+
+.report-card p{
+
+    min-height:45px;
+    color:#6c757d;
+
+}
+
+/* Tombol */
+
+.report-card .btn{
+
+    border-radius:30px;
+    padding:10px 28px;
+    font-weight:600;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.page-header{
+
+padding:20px;
+
+}
+
+.report-card{
+
+margin-bottom:15px;
+
+}
+
+.report-icon{
+
+width:75px;
+height:75px;
+font-size:32px;
+
+}
+
+}
