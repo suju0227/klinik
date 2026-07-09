@@ -1,40 +1,27 @@
 <?php
 include "../config/koneksi.php";
 
-$settings_file = "../config/settings.json";
+$settings_file = __DIR__ . '/../config/settings.json';
 
 $status = "";
 
 // Jika form dikirim (POST)
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $new_settings = [
-        'nama_klinik' => htmlspecialchars($_POST['nama_klinik']),
-        'alamat' => htmlspecialchars($_POST['alamat']),
-        'telepon' => htmlspecialchars($_POST['telepon']),
-        'email' => htmlspecialchars($_POST['email']),
-        'jam_buka' => htmlspecialchars($_POST['jam_buka']),
-        'jam_tutup' => htmlspecialchars($_POST['jam_tutup'])
+        'nama_klinik' => trim($_POST['nama_klinik']),
+        'alamat'      => trim($_POST['alamat']),
+        'telepon'     => trim($_POST['telepon']),
+        'email'       => trim($_POST['email']),
+        'jam_buka'    => trim($_POST['jam_buka']),
+        'jam_tutup'   => trim($_POST['jam_tutup'])
     ];
 
     if (file_put_contents($settings_file, json_encode($new_settings, JSON_PRETTY_PRINT))) {
         $status = "berhasil";
+        $settings = array_merge($settings, $new_settings);
     } else {
         $status = "gagal";
     }
-}
-
-// Membaca pengaturan saat ini
-if (file_exists($settings_file)) {
-    $settings = json_decode(file_get_contents($settings_file), true);
-} else {
-    $settings = [
-        'nama_klinik' => 'Klinik Yakusa',
-        'alamat' => 'Jl. Imam Inlu Amal No.1947',
-        'telepon' => '0856-5619-1731',
-        'email' => 'info@klinikyakusa.com',
-        'jam_buka' => '08:00',
-        'jam_tutup' => '21:00'
-    ];
 }
 
 include "../layout/header.php";

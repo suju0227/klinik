@@ -125,7 +125,7 @@ include "layout/header.php";
 
                         <br>
 
-                        <span><?= strtoupper($settings['nama_klinik']); ?></span>
+                        <span><?= htmlspecialchars(strtoupper($settings['nama_klinik'])); ?></span>
 
                     </h1>
 
