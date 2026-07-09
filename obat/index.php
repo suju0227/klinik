@@ -18,7 +18,7 @@ include "../layout/header.php";
 
 <div class="card shadow border-0 rounded-4">
 
-<div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
+<div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
 
 <div>
 
@@ -50,7 +50,7 @@ Tambah Obat
 
 <table id="tabelObat" class="table table-hover align-middle">
 
-<thead class="table-warning">
+<thead class="table-success">
 
 <tr>
 

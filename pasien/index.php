@@ -22,7 +22,7 @@ include "../layout/header.php";
 
 <div class="card shadow border-0 rounded-4">
 
-<div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+<div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
 
 <div>
 
@@ -42,7 +42,7 @@ Kelola seluruh data pasien klinik
 
 </div>
 
-<a href="tambah.php" class="btn btn-light">
+<a href="tambah.php" class="btn btn-dark">
 
 <i class="fas fa-plus-circle"></i>
 
@@ -58,7 +58,7 @@ Tambah Pasien
 
 <table id="tabelPasien" class="table table-hover align-middle">
 
-<thead class="table-primary">
+<thead class="table-success">
 
 <tr>
 
