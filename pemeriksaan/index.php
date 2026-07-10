@@ -27,7 +27,7 @@ include "../layout/header.php";
 
 <div class="container-fluid py-4">
 
-<div class="card shadow border-0 rounded-4">
+<div class="card card-glass shadow border-0">
 
 <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
 
@@ -42,7 +42,7 @@ Data Pemeriksaan
 
 </div>
 
-<a href="tambah.php" class="btn btn-dark">
+<a href="tambah.php" class="btn btn-primary">
 <i class="fas fa-plus-circle"></i>
 Tambah Pemeriksaan
 </a>

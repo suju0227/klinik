@@ -9,33 +9,18 @@
 ===================================================== */
 
 :root{
-
-    --primary:#16a34a;
-
-    --primary-dark:#15803d;
-
-    --secondary:#0f172a;
-
-    --success:#22c55e;
-
-    --danger:#ef4444;
-
-    --warning:#f59e0b;
-
-    --info:#0ea5e9;
-
-    --purple:#7c3aed;
-
-    --gray:#64748b;
-
-    --light:#f8fafc;
-
-    --white:#ffffff;
-
-    --shadow:
-
-        0 15px 35px rgba(0,0,0,.08);
-
+    --primary: #0d9488;          /* Teal 600 */
+    --primary-dark: #0f766e;     /* Teal 700 */
+    --secondary: var(--slate-800);
+    --success: #10b981;          /* Emerald 500 */
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #0ea5e9;
+    --purple: #7c3aed;
+    --gray: var(--slate-500);
+    --light: var(--slate-50);
+    --white: #ffffff;
+    --shadow: var(--shadow-soft);
 }
 
 /* =====================================================
@@ -73,33 +58,18 @@
 ===================================================== */
 
 .hero-dashboard{
-
     background:
-
     linear-gradient(
-
     135deg,
-
-    #16a34a,
-
-    #22c55e
-
+    var(--primary),
+    var(--secondary)
     );
-
-    border-radius:30px;
-
+    border-radius: var(--radius-2xl);
     padding:45px;
-
     color:#fff;
-
     overflow:hidden;
-
     position:relative;
-
-    box-shadow:
-
-    0 25px 60px rgba(22,163,74,.30);
-
+    box-shadow: 0 20px 40px rgba(13, 148, 136, 0.2);
 }
 
 /* efek lingkaran */
@@ -193,9 +163,7 @@
 }
 
 .hero-title span{
-
-    color:#dcfce7;
-
+    color: var(--slate-100);
 }
 
 /* =====================================================
@@ -356,33 +324,20 @@
 ===================================================== */
 
 .stats-card{
-
     position:relative;
-
     overflow:hidden;
-
-    border-radius:24px;
-
+    border-radius: var(--radius-xl);
     padding:28px;
-
     min-height:185px;
-
     color:#fff;
-
-    transition:.35s ease;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-soft);
     cursor:pointer;
-
 }
 
 .stats-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 25px 60px rgba(0,0,0,.18);
-
+    transform:translateY(-4px);
+    box-shadow: var(--shadow-soft-hover);
 }
 
 /* Glow Effect */
@@ -544,39 +499,27 @@
 ===================================== */
 
 .card-pasien{
-
-    background:linear-gradient(135deg,#16a34a,#22c55e);
-
+    background:linear-gradient(135deg, var(--primary), var(--success));
 }
 
 .card-dokter{
-
-    background:linear-gradient(135deg,#2563eb,#3b82f6);
-
+    background:linear-gradient(135deg, #0284c7, #38bdf8);
 }
 
 .card-layanan{
-
-    background:linear-gradient(135deg,#7c3aed,#8b5cf6);
-
+    background:linear-gradient(135deg, #6366f1, #818cf8);
 }
 
 .card-obat{
-
-    background:linear-gradient(135deg,#f59e0b,#fbbf24);
-
+    background:linear-gradient(135deg, #ea580c, #f97316);
 }
 
 .card-periksa{
-
-    background:linear-gradient(135deg,#0891b2,#06b6d4);
-
+    background:linear-gradient(135deg, #0d9488, #2dd4bf);
 }
 
 .card-pendapatan{
-
-    background:linear-gradient(135deg,#111827,#374151);
-
+    background:linear-gradient(135deg, var(--slate-800), var(--slate-600));
 }
 
 /* =====================================
@@ -592,48 +535,30 @@
 }
 
 .stats-card:hover h2,
-
 .stats-card:hover h4{
-
-    transform:scale(1.05);
-
-    transition:.35s;
-
+    transform:scale(1.02);
+    transition: var(--transition-normal);
 }
 /* =====================================================
             FINANCE CARD
 ===================================================== */
 
 .finance-card{
-
     position:relative;
-
     overflow:hidden;
-
-    border-radius:24px;
-
+    border-radius: var(--radius-xl);
     padding:28px;
-
     color:#fff;
-
     min-height:155px;
-
     display:flex;
-
     align-items:center;
-
-    transition:.35s;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-soft);
 }
 
 .finance-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 25px 55px rgba(0,0,0,.15);
-
+    transform:translateY(-4px);
+    box-shadow: var(--shadow-soft-hover);
 }
 
 .finance-card::before{
@@ -773,21 +698,15 @@
 ========================================== */
 
 .finance-card.success{
-
-    background:linear-gradient(135deg,#16a34a,#22c55e);
-
+    background:linear-gradient(135deg, var(--primary), var(--success));
 }
 
 .finance-card.primary{
-
-    background:linear-gradient(135deg,#2563eb,#3b82f6);
-
+    background:linear-gradient(135deg, #0284c7, #38bdf8);
 }
 
 .finance-card.danger{
-
-    background:linear-gradient(135deg,#dc2626,#ef4444);
-
+    background:linear-gradient(135deg, #dc2626, #ef4444);
 }
 
 /* =====================================================
@@ -795,27 +714,17 @@
 ===================================================== */
 
 .chart-card{
-
     background:#fff;
-
-    border-radius:24px;
-
+    border-radius: var(--radius-xl);
     overflow:hidden;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-    transition:.35s;
-
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-normal);
     height:100%;
-
 }
 
 .chart-card:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:0 25px 55px rgba(0,0,0,.12);
-
+    transform:translateY(-4px);
+    box-shadow: var(--shadow-soft-hover);
 }
 
 /* ==========================================
@@ -855,25 +764,15 @@
 }
 
 .chart-badge{
-
     width:60px;
-
     height:60px;
-
     border-radius:18px;
-
-    background:linear-gradient(135deg,#16a34a,#22c55e);
-
+    background:linear-gradient(135deg, var(--primary), var(--success));
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     color:#fff;
-
     font-size:24px;
-
 }
 
 /* ==========================================
@@ -922,27 +821,17 @@
 ===================================================== */
 
 .activity-card{
-
     background:#ffffff;
-
-    border-radius:24px;
-
+    border-radius: var(--radius-xl);
     padding:30px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-
+    box-shadow: var(--shadow-soft);
     height:100%;
-
-    transition:.35s;
-
+    transition: var(--transition-normal);
 }
 
 .activity-card:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:0 25px 55px rgba(0,0,0,.12);
-
+    transform:translateY(-4px);
+    box-shadow: var(--shadow-soft-hover);
 }
 
 /* ==========================================
@@ -992,21 +881,13 @@
 }
 
 .timeline::before{
-
     content:"";
-
     position:absolute;
-
     left:16px;
-
     top:0;
-
     bottom:0;
-
     width:3px;
-
-    background:#d1fae5;
-
+    background: var(--slate-200);
 }
 
 .timeline-item{
@@ -1026,51 +907,31 @@
 }
 
 .timeline-icon{
-
     position:absolute;
-
     left:-8px;
-
     top:4px;
-
     width:48px;
-
     height:48px;
-
     border-radius:50%;
-
-    background:linear-gradient(135deg,#16a34a,#22c55e);
-
+    background:linear-gradient(135deg, var(--primary), var(--success));
     color:#fff;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    box-shadow:0 10px 20px rgba(22,163,74,.30);
-
+    box-shadow:0 10px 20px rgba(13, 148, 136, 0.2);
 }
 
 .timeline-content{
-
-    background:#f8fafc;
-
+    background: var(--slate-50);
     border-radius:18px;
-
     padding:18px 22px;
-
-    transition:.3s;
-
+    transition: var(--transition-fast);
 }
 
 .timeline-content:hover{
-
-    background:#f0fdf4;
-
+    background: white;
     transform:translateX(5px);
-
+    box-shadow: 0 10px 20px rgba(13, 148, 136, 0.05);
 }
 
 .timeline-content h6{
@@ -1094,15 +955,10 @@
 }
 
 .timeline-content small{
-
     display:block;
-
-    color:#16a34a;
-
+    color: var(--primary);
     margin-bottom:8px;
-
     font-weight:600;
-
 }
 
 .timeline-content span{
@@ -1118,49 +974,30 @@
 ===================================================== */
 
 .quick-card-container{
-
     background:#ffffff;
-
-    border-radius:24px;
-
+    border-radius: var(--radius-xl);
     padding:30px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-
+    box-shadow: var(--shadow-soft);
     height:100%;
-
 }
 
 .quick-box{
-
     display:block;
-
     text-align:center;
-
     background:#ffffff;
-
-    border-radius:22px;
-
+    border-radius: var(--radius-lg);
     padding:28px 20px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.05);
-
-    transition:.35s;
-
-    border:1px solid #eef2f7;
-
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-normal);
+    border:1px solid var(--slate-200);
     color:#111827;
-
 }
 
 .quick-box:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
-
-    color:#16a34a;
-
+    transform:translateY(-4px);
+    box-shadow: var(--shadow-soft-hover);
+    color: var(--primary);
+    border-color: var(--primary);
 }
 
 .quick-icon{
@@ -1220,23 +1057,14 @@
 ===================================================== */
 
 .clinic-card{
-
     margin-top:10px;
-
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-
+    background:linear-gradient(135deg, var(--slate-900), var(--slate-800));
     color:#fff;
-
-    border-radius:24px;
-
+    border-radius: var(--radius-xl);
     padding:35px;
-
-    box-shadow:0 18px 40px rgba(15,23,42,.35);
-
+    box-shadow: var(--shadow-soft);
     overflow:hidden;
-
     position:relative;
-
 }
 
 .clinic-card::before{
@@ -1270,11 +1098,8 @@
 }
 
 .clinic-card h3 i{
-
-    color:#22c55e;
-
+    color: var(--success);
     margin-right:10px;
-
 }
 
 .clinic-card p{
@@ -1629,9 +1454,7 @@
 .quick-card-container,
 .quick-box,
 .clinic-card{
-
-    transition:all .35s ease;
-
+    transition: var(--transition-normal);
 }
 
 .stats-card:hover,
@@ -1639,9 +1462,7 @@
 .chart-card:hover,
 .activity-card:hover,
 .quick-box:hover{
-
-    transform:translateY(-8px);
-
+    transform:translateY(-4px);
 }
 
 /* =====================================================
@@ -1673,17 +1494,12 @@
 }
 
 .timeline::-webkit-scrollbar-thumb{
-
-    background:#22c55e;
-
+    background: var(--slate-300);
     border-radius:20px;
-
 }
 
 .timeline::-webkit-scrollbar-thumb:hover{
-
-    background:#16a34a;
-
+    background: var(--primary);
 }
 
 /* =====================================================
@@ -1699,23 +1515,15 @@
 }
 
 .quick-box:hover{
-
-    border-color:#22c55e;
-
+    border-color: var(--primary);
 }
 
 .timeline-content:hover{
-
-    box-shadow:0 12px 25px rgba(22,163,74,.10);
-
+    box-shadow: 0 10px 20px rgba(13, 148, 136, 0.05);
 }
 
 .clinic-card:hover{
-
-    transform:translateY(-6px);
-
-    transition:.35s;
-
+    transform:translateY(-4px);
 }
 
 /* =====================================================
@@ -1743,3 +1551,195 @@ canvas{
 /* =====================================================
                 END
 ===================================================== */
+
+/* =====================================================
+        DASHBOARD REFINEMENT
+===================================================== */
+
+.container-fluid.py-4{
+    padding-top:1.5rem !important;
+    padding-bottom:1.5rem !important;
+}
+
+.hero-dashboard{
+    background:
+        linear-gradient(135deg, rgba(13,148,136,.98), rgba(15,23,42,.92));
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 24px 48px rgba(13,148,136,.18);
+}
+
+.hero-dashboard::before,
+.hero-dashboard::after{
+    content:none;
+}
+
+.hero-badge{
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.14);
+}
+
+.hero-title{
+    font-size:clamp(2rem, 4vw, 3.1rem);
+}
+
+.hero-desc{
+    color:rgba(255,255,255,.9);
+}
+
+.hero-info{
+    gap:16px;
+}
+
+.hero-item{
+    border:1px solid rgba(255,255,255,.10);
+}
+
+.hero-clock{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.14);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+.stats-card,
+.finance-card,
+.chart-card,
+.activity-card,
+.quick-card-container,
+.clinic-card{
+    border-radius:20px;
+    border:1px solid rgba(226,232,240,.95);
+    background:rgba(255,255,255,.96);
+    box-shadow:0 16px 35px rgba(15,23,42,.06);
+}
+
+.stats-card{
+    min-height:160px;
+    padding:22px;
+}
+
+.stats-header{
+    gap:14px;
+}
+
+.stats-label{
+    color:var(--slate-500);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+}
+
+.stats-card h2,
+.stats-card h4{
+    color:var(--slate-900);
+}
+
+.stats-icon{
+    background:linear-gradient(135deg, rgba(13,148,136,.14), rgba(16,185,129,.12));
+    color:var(--primary);
+}
+
+.finance-card{
+    padding:22px;
+}
+
+.finance-icon{
+    background:linear-gradient(135deg, rgba(13,148,136,.14), rgba(16,185,129,.12));
+    color:var(--primary);
+}
+
+.finance-content small{
+    color:var(--slate-500);
+}
+
+.finance-content h2{
+    color:var(--slate-900);
+}
+
+.chart-card{
+    padding:22px;
+}
+
+.chart-header{
+    margin-bottom:18px;
+}
+
+.chart-header h4{
+    color:var(--slate-900);
+}
+
+.chart-body{
+    background:linear-gradient(180deg, rgba(248,250,252,.92), rgba(255,255,255,.96));
+    border-radius:18px;
+    border:1px solid var(--slate-100);
+    min-height:320px;
+    padding:18px;
+}
+
+.activity-card{
+    padding:22px;
+}
+
+.timeline{
+    max-height:540px;
+    padding-right:8px;
+}
+
+.timeline-content{
+    background:var(--slate-50);
+    border:1px solid var(--slate-200);
+}
+
+.quick-card-container{
+    padding:22px;
+}
+
+.quick-box{
+    border:1px solid var(--slate-200);
+    background:linear-gradient(180deg, #fff, var(--slate-50));
+}
+
+.quick-icon{
+    background:linear-gradient(135deg, rgba(13,148,136,.14), rgba(16,185,129,.12));
+    color:var(--primary);
+}
+
+.clinic-card{
+    background:linear-gradient(180deg, #fff, var(--slate-50));
+}
+
+.badge{
+    border-radius:999px;
+}
+
+@media (max-width: 992px){
+    .hero-dashboard{
+        padding:28px;
+    }
+
+    .chart-body{
+        min-height:260px;
+    }
+}
+
+@media (max-width: 576px){
+    .hero-dashboard{
+        padding:22px;
+    }
+
+    .hero-item{
+        width:100%;
+    }
+
+    .stats-card,
+    .finance-card,
+    .chart-card,
+    .activity-card,
+    .quick-card-container,
+    .clinic-card{
+        border-radius:18px;
+    }
+
+    .chart-body{
+        min-height:220px;
+    }
+}

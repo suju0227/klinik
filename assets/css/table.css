@@ -1,0 +1,104 @@
+/* ======================================================
+   SISTEM MANAJEMEN KLINIK
+   Modern Table Custom Styles
+   ====================================================== */
+
+.card .table-responsive{
+    border-radius:var(--radius-xl);
+    overflow:hidden;
+    border:1px solid var(--slate-200);
+    background:var(--surface);
+}
+
+.table {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom:0;
+    color:var(--slate-700);
+}
+
+/* Remove vertical lines and apply slate borders */
+.table th,
+.table td {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--slate-200);
+    padding: 15px 14px;
+}
+
+/* Modernized Header */
+.table thead {
+    background:
+        linear-gradient(180deg, rgba(13,148,136,.08), rgba(13,148,136,.03)) !important;
+    border-bottom: 2px solid var(--slate-200) !important;
+}
+
+.table th {
+    color: var(--slate-700) !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Row Hover State with Teal Tint */
+.table-hover tbody tr {
+    transition: background-color var(--transition-fast);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 148, 136, 0.05) !important;
+}
+
+/* Ensure card wrappers enclosing tables clip headers */
+.card-table-wrapper {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.card-table-wrapper table {
+    margin-bottom: 0;
+}
+
+.table .badge{
+    padding:.42rem .8rem;
+    border-radius:999px;
+}
+
+.table td strong{
+    color:var(--slate-900);
+}
+
+.dataTables_wrapper .row{
+    align-items:center;
+    gap:.75rem 0;
+}
+
+.dataTables_length select,
+.dataTables_filter input{
+    border-radius:var(--radius-md) !important;
+    border:1px solid var(--slate-200) !important;
+    min-height:42px;
+}
+
+.dataTables_filter input{
+    padding:.6rem .9rem !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    border-radius:10px !important;
+    margin:0 2px;
+}
+
+@media (max-width: 576px){
+    .table th,
+    .table td{
+        padding:12px 10px;
+    }
+
+    .dataTables_filter{
+        width:100%;
+    }
+}

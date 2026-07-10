@@ -15,22 +15,26 @@ document.addEventListener("DOMContentLoaded", () => {
             TOGGLE SIDEBAR
     ===================================== */
 
-    toggle.addEventListener("click", (e) => {
+    const syncMobileLock = () => {
+        if (window.innerWidth <= 992 && sidebar.classList.contains("show")) {
+            document.body.style.overflow = "hidden";
+            return;
+        }
 
+        document.body.style.overflow = "";
+    };
+
+    toggle.addEventListener("click", (e) => {
         e.stopPropagation();
 
         if (window.innerWidth <= 992) {
-
             sidebar.classList.toggle("show");
-
         } else {
-
             sidebar.classList.toggle("collapsed");
-
             main.classList.toggle("expanded");
-
         }
 
+        syncMobileLock();
     });
 
     /* =====================================
@@ -47,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ) {
 
                 sidebar.classList.remove("show");
+                syncMobileLock();
 
             }
 
@@ -63,9 +68,25 @@ document.addEventListener("DOMContentLoaded", () => {
         if (window.innerWidth > 992) {
 
             sidebar.classList.remove("show");
+            document.body.style.overflow = "";
+
+        } else {
+
+            sidebar.classList.remove("collapsed");
+            main.classList.remove("expanded");
 
         }
 
+        syncMobileLock();
+    });
+
+    sidebar.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth <= 992) {
+                sidebar.classList.remove("show");
+                syncMobileLock();
+            }
+        });
     });
 
 });

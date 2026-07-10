@@ -1,28 +1,50 @@
 <?php
 include "../config/koneksi.php";
 
-$settings_file = __DIR__ . '/../config/settings.json';
-
-$status = "";
-
 // Jika form dikirim (POST)
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nama_klinik = trim($_POST['nama_klinik']);
+    $alamat      = trim($_POST['alamat']);
+    $telepon     = trim($_POST['telepon']);
+    $email       = trim($_POST['email']);
+    $jam_buka    = trim($_POST['jam_buka']);
+    $jam_tutup   = trim($_POST['jam_tutup']);
+
+    // Validasi input
+    if (empty($nama_klinik) || empty($alamat) || empty($telepon) || empty($email) || empty($jam_buka) || empty($jam_tutup)) {
+        header("Location: index.php?status=kosong");
+        exit;
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header("Location: index.php?status=email_invalid");
+        exit;
+    }
+
     $new_settings = [
-        'nama_klinik' => trim($_POST['nama_klinik']),
-        'alamat'      => trim($_POST['alamat']),
-        'telepon'     => trim($_POST['telepon']),
-        'email'       => trim($_POST['email']),
-        'jam_buka'    => trim($_POST['jam_buka']),
-        'jam_tutup'   => trim($_POST['jam_tutup'])
+        'nama_klinik' => $nama_klinik,
+        'alamat'      => $alamat,
+        'telepon'     => $telepon,
+        'email'       => $email,
+        'jam_buka'    => $jam_buka,
+        'jam_tutup'   => $jam_tutup
     ];
 
-    if (file_put_contents($settings_file, json_encode($new_settings, JSON_PRETTY_PRINT))) {
-        $status = "berhasil";
-        $settings = array_merge($settings, $new_settings);
-    } else {
-        $status = "gagal";
+    // Penulisan file secara atomik (Tulis ke berkas sementara dulu baru di-rename)
+    $temp_file = $settings_file_path . '.tmp';
+    if (file_put_contents($temp_file, json_encode($new_settings, JSON_PRETTY_PRINT))) {
+        if (rename($temp_file, $settings_file_path)) {
+            header("Location: index.php?status=berhasil");
+            exit;
+        }
     }
+
+    header("Location: index.php?status=gagal");
+    exit;
 }
+
+// Pola PRG: Ambil status dari query parameter GET
+$status = isset($_GET['status']) ? $_GET['status'] : "";
 
 include "../layout/header.php";
 ?>

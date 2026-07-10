@@ -4,25 +4,15 @@
 ====================================================== */
 
 :root{
-
-    --sidebar-bg:#0f172a;
-
-    --sidebar-bg2:#111827;
-
-    --primary:#16a34a;
-
-    --primary-hover:#22c55e;
-
-    --text:#f8fafc;
-
-    --muted:#94a3b8;
-
-    --border:rgba(255,255,255,.08);
-
-    --hover:rgba(22,163,74,.15);
-
-    --active:#16a34a;
-
+    --sidebar-bg: var(--slate-900);
+    --sidebar-bg2: var(--slate-950);
+    --primary: #0d9488;          /* Teal 600 */
+    --primary-hover: #0f766e;    /* Teal 700 */
+    --text: var(--slate-50);
+    --muted: var(--slate-400);
+    --border: rgba(255,255,255,.08);
+    --hover: rgba(13, 148, 136, 0.15); /* Teal accent hover */
+    --active: var(--secondary); /* Active highlights use Emerald */
 }
 
 /* ==========================================
@@ -173,42 +163,27 @@
 }
 
 .profile-card:hover{
-
-    background:rgba(22,163,74,.12);
-
-    border-color:rgba(22,163,74,.35);
-
+    background:rgba(13,148,136,.12);
+    border-color:rgba(13,148,136,.35);
 }
 
 .profile-avatar{
-
     width:60px;
-
     height:60px;
-
     min-width:60px;
-
     border-radius:18px;
-
     background:linear-gradient(
         135deg,
-        #16a34a,
-        #22c55e
+        var(--primary),
+        var(--secondary)
     );
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     font-size:26px;
-
     color:#fff;
-
     box-shadow:
-    0 10px 25px rgba(22,163,74,.35);
-
+    0 10px 25px rgba(13,148,136,.35);
 }
 
 .profile-info{
@@ -246,11 +221,8 @@
 }
 
 .profile-info span i{
-
-    color:#22c55e;
-
+    color: var(--secondary);
     font-size:10px;
-
 }
 
 /* ======================================================
@@ -332,43 +304,30 @@
 /* Hover */
 
 .sidebar-menu li a:hover{
-
-    background:rgba(22,163,74,.12);
-
+    background:rgba(13,148,136,.12);
     color:#fff;
-
     transform:translateX(6px);
-
 }
 
 .sidebar-menu li a:hover i{
-
-    color:#22c55e;
-
+    color: var(--secondary);
 }
 
 /* Active */
 
 .sidebar-menu li a.active{
-
     background:linear-gradient(
         90deg,
-        rgba(22,163,74,.22),
-        rgba(22,163,74,.08)
+        rgba(13,148,136,.22),
+        rgba(13,148,136,.08)
     );
-
     color:#fff;
-
     font-weight:600;
-
-    border-left:4px solid #22c55e;
-
+    border-left:4px solid var(--secondary);
 }
 
 .sidebar-menu li a.active i{
-
-    color:#22c55e;
-
+    color: var(--secondary);
 }
 
 /* Ripple Glow */
@@ -455,19 +414,13 @@
 }
 
 .footer-link:hover{
-
-    background:rgba(22,163,74,.12);
-
+    background:rgba(13,148,136,.12);
     color:#fff;
-
     transform:translateX(6px);
-
 }
 
 .footer-link:hover i{
-
-    color:#22c55e;
-
+    color: var(--secondary);
 }
 
 /* Logout */
@@ -561,9 +514,7 @@
 }
 
 .sidebar-menu::-webkit-scrollbar-thumb:hover{
-
-    background:#22c55e;
-
+    background: var(--secondary);
 }
 
 /* ==========================================
@@ -647,25 +598,15 @@
 }
 
 @keyframes pulseLogo{
-
     0%{
-
-        box-shadow:0 0 0 rgba(34,197,94,.35);
-
+        box-shadow:0 0 0 rgba(13,148,136,.35);
     }
-
     50%{
-
-        box-shadow:0 0 25px rgba(34,197,94,.45);
-
+        box-shadow:0 0 25px rgba(13,148,136,.45);
     }
-
     100%{
-
-        box-shadow:0 0 0 rgba(34,197,94,.35);
-
+        box-shadow:0 0 0 rgba(13,148,136,.35);
     }
-
 }
 
 /* ==========================================
@@ -673,23 +614,14 @@
 ========================================== */
 
 .sidebar-menu li a.active::after{
-
     content:"";
-
     position:absolute;
-
     right:15px;
-
     width:8px;
-
     height:8px;
-
     border-radius:50%;
-
-    background:#22c55e;
-
-    box-shadow:0 0 12px rgba(34,197,94,.8);
-
+    background: var(--secondary);
+    box-shadow:0 0 12px rgba(16,185,129,.8);
 }
 
 /* ==========================================
@@ -820,4 +752,202 @@
 
 }
 
+}
+
+/* ======================================================
+        REFINED SHELL OVERRIDES
+====================================================== */
+
+.sidebar{
+    width:280px;
+    background:
+        linear-gradient(180deg, rgba(13, 148, 136, 0.18), transparent 180px),
+        linear-gradient(180deg, var(--slate-950), var(--slate-900));
+    border-right:1px solid rgba(255,255,255,.06);
+    overflow-y:auto;
+    scrollbar-width:thin;
+    scrollbar-color:var(--slate-500) transparent;
+}
+
+.sidebar::-webkit-scrollbar{
+    width:8px;
+}
+
+.sidebar::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+    background:rgba(148,163,184,.45);
+    border-radius:999px;
+}
+
+.sidebar-top{
+    padding:24px 22px 18px;
+}
+
+.brand{
+    margin-bottom:22px;
+}
+
+.brand-icon{
+    width:60px;
+    height:60px;
+    min-width:60px;
+    border-radius:18px;
+    background:linear-gradient(135deg, var(--primary), var(--secondary));
+    box-shadow:0 16px 30px rgba(13,148,136,.28);
+}
+
+.brand-text h3{
+    font-size:18px;
+    letter-spacing:0;
+}
+
+.brand-text small{
+    color:rgba(226,232,240,.72);
+}
+
+.profile-card{
+    border-radius:20px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 18px 40px rgba(2,6,23,.18);
+}
+
+.sidebar-menu li a{
+    border-radius:16px;
+    padding:14px 16px;
+    color:#e2e8f0;
+    border:1px solid transparent;
+}
+
+.sidebar-menu li a:hover{
+    background:rgba(13,148,136,.14);
+    border-color:rgba(13,148,136,.22);
+    transform:translateX(2px);
+}
+
+.sidebar-menu li a.active{
+    background:linear-gradient(135deg, rgba(13,148,136,.24), rgba(16,185,129,.18));
+    border-color:rgba(34,197,94,.22);
+    box-shadow:0 12px 24px rgba(13,148,136,.14);
+}
+
+.sidebar-menu li a i{
+    width:20px;
+    text-align:center;
+    font-size:16px;
+}
+
+.menu-title{
+    color:rgba(148,163,184,.78);
+    padding-left:12px;
+    margin:20px 0 10px;
+}
+
+.sidebar-footer{
+    padding:18px 22px 24px;
+}
+
+.sidebar-divider{
+    background:rgba(255,255,255,.08);
+}
+
+.footer-link{
+    border-radius:14px;
+    padding:12px 14px;
+    color:#e2e8f0;
+}
+
+.footer-link:hover{
+    background:rgba(255,255,255,.06);
+    color:#fff;
+}
+
+.footer-link.logout{
+    color:#fecaca;
+}
+
+.sidebar-version{
+    color:rgba(226,232,240,.72);
+}
+
+.sidebar.collapsed{
+    width:92px;
+}
+
+.sidebar.collapsed .sidebar-top,
+.sidebar.collapsed .sidebar-footer{
+    padding-left:14px;
+    padding-right:14px;
+}
+
+.sidebar.collapsed .brand{
+    justify-content:center;
+}
+
+.sidebar.collapsed .brand-text,
+.sidebar.collapsed .profile-info,
+.sidebar.collapsed .menu-title,
+.sidebar.collapsed .footer-link span,
+.sidebar.collapsed .sidebar-version{
+    display:none;
+}
+
+.sidebar.collapsed .profile-card,
+.sidebar.collapsed .footer-link{
+    justify-content:center;
+}
+
+.sidebar.collapsed .sidebar-menu li a{
+    justify-content:center;
+    padding:14px 12px;
+}
+
+.sidebar.collapsed .sidebar-menu li a span{
+    display:none;
+}
+
+.main{
+    margin-left:280px;
+}
+
+.main.expanded{
+    margin-left:92px;
+}
+
+@media (max-width: 992px){
+    .sidebar{
+        width:280px;
+        left:-300px;
+        box-shadow:16px 0 40px rgba(15,23,42,.28);
+    }
+
+    .sidebar.show{
+        left:0;
+    }
+
+    .sidebar.collapsed{
+        width:280px;
+    }
+
+    .main,
+    .main.expanded{
+        margin-left:0;
+    }
+}
+
+@media (max-width: 576px){
+    .sidebar-top{
+        padding:20px 18px 14px;
+    }
+
+    .sidebar-footer{
+        padding:16px 18px 20px;
+    }
+
+    .brand-text h3{
+        font-size:17px;
+    }
 }

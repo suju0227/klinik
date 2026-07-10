@@ -213,7 +213,7 @@ $pdf->SetFont('Arial','I',8);
 $pdf->MultiCell(
     70,
     4,
-    "Terima kasih telah berobat di Klinik Yakusa.\nSemoga lekas sembuh.",
+    "Terima kasih telah berobat di " . $settings['nama_klinik'] . ".\nSemoga lekas sembuh.",
     0,
     'C'
 );

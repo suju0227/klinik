@@ -1,0 +1,11 @@
+{
+    "schema_version": 2,
+    "commit": "26cd69ade3bd3ac012c1830057e13376d2885ca5",
+    "indexed_at": "2026-07-09T18:10:08Z",
+    "project": "C-xampp-htdocs-klinik",
+    "nodes": 692,
+    "edges": 1876,
+    "original_size": 3080192,
+    "compressed_size": 327095,
+    "compression_level": 3
+}
