@@ -7,31 +7,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --primary: #10b981;
-    --primary-hover: #34d399;
-    --secondary: #10b981;
-    --secondary-hover: #059669;
+    --primary: #0d9488;
+    --primary-hover: #0f766e;
+    --secondary: #0ea5e9;
+    --secondary-hover: #0284c7;
 
     --slate-50: #f8fafc;
-    --slate-100: #cbd5e1;
-    --slate-200: rgba(16, 185, 129, 0.12);
-    --slate-300: rgba(16, 185, 129, 0.28);
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
     --slate-400: #94a3b8;
     --slate-500: #64748b;
     --slate-600: #475569;
-    --slate-700: #94a3b8;
-    --slate-800: #cbd5e1;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
     --slate-900: #0f172a;
     --slate-950: #020617;
 
-    --text-strong: var(--slate-800);
+    --text-strong: var(--slate-900);
     --text-default: var(--slate-700);
     --text-muted: var(--slate-500);
     --surface: #ffffff;
     --surface-soft: var(--slate-50);
-    --surface-alt: #f8fbfb;
-    --border-subtle: var(--slate-200);
-    --border-strong: var(--slate-300);
+    --surface-alt: #f8fafc;
+    --border-subtle: var(--slate-100);
+    --border-strong: var(--slate-200);
 
     --radius-sm: 10px;
     --radius-md: 12px;
@@ -39,20 +39,20 @@
     --radius-xl: 20px;
     --radius-2xl: 24px;
 
-    --shadow-soft: 0 12px 30px rgba(51, 65, 85, 0.05);
-    --shadow-hover: 0 20px 40px rgba(51, 65, 85, 0.09);
-    --shadow-card: 0 18px 40px rgba(15, 23, 42, 0.06);
+    --shadow-soft: 0 2px 12px rgba(15, 23, 42, 0.04);
+    --shadow-hover: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.05);
     --shadow-ring: 0 0 0 4px rgba(13, 148, 136, 0.15);
 
     --transition-fast: 0.2s ease-in-out;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.45s ease;
 
-    --surface-glass: rgba(10, 15, 30, 0.65);
-    --border-glass: rgba(16, 185, 129, 0.12);
-    --border-glass-hover: rgba(16, 185, 129, 0.28);
-    --shadow-glass: 0 20px 40px rgba(2, 6, 23, 0.3);
-    --shadow-glow: 0 0 15px rgba(16, 185, 129, 0.2);
+    --surface-glass: #ffffff;
+    --border-glass: var(--border-strong);
+    --border-glass-hover: var(--primary);
+    --shadow-glass: var(--shadow-soft);
+    --shadow-glow: 0 0 15px rgba(13, 148, 136, 0.08);
 }
 
 *{
@@ -66,11 +66,11 @@ html{
     scroll-behavior:smooth;
 }
 
-body{
-    background: linear-gradient(180deg, #020617 0%, #090f1d 100%);
-    color: #f1f5f9;
+body {
+    background: #f8fafc;
+    color: #334155;
     overflow-x: hidden;
-    min-height:100vh;
+    min-height: 100vh;
 }
 
 body, button, input, select, textarea {
@@ -351,18 +351,18 @@ a:hover{
 =========================== */
 
 .card-glass {
-    background: var(--surface-glass) !important;
-    backdrop-filter: blur(22px) !important;
-    -webkit-backdrop-filter: blur(22px) !important;
-    border: 1px solid var(--border-glass) !important;
+    background: var(--surface) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid var(--border-strong) !important;
     border-radius: var(--radius-xl) !important;
-    box-shadow: var(--shadow-glass) !important;
+    box-shadow: var(--shadow-soft) !important;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 .card-glass:hover {
     transform: translateY(-5px);
-    border-color: var(--border-glass-hover) !important;
-    box-shadow: var(--shadow-glass), var(--shadow-glow) !important;
+    border-color: var(--primary) !important;
+    box-shadow: var(--shadow-hover) !important;
 }
 
 /* ===========================
