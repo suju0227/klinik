@@ -18,7 +18,7 @@ function headerPDF($pdf, $judul)
     // LOGO
     // ==========================================
 
-    $logo = "../assets/img/logo.png";
+    $logo = "../assets/img/logo_klinik.jpg";
 
     if(file_exists($logo))
     {

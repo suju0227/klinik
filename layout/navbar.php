@@ -46,6 +46,11 @@ if (strpos($request, '/pasien/') !== false) {
     $pageCrumb = 'Akun';
     $pageLabel = 'Pengaturan';
     $pageIcon = 'fa-gear';
+} elseif (strpos($request, '/profile/') !== false) {
+    $pageTitle = 'Profil Saya';
+    $pageCrumb = 'Akun';
+    $pageLabel = 'Profil';
+    $pageIcon = 'fa-user-circle';
 }
 
 ?>

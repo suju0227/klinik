@@ -22,7 +22,7 @@ class PDF_Klinik extends FPDF
 
         $contentWidth = $pageWidth - ($margin * 2);
 
-        $logo = __DIR__ . '/../assets/img/logo.png';
+        $logo = __DIR__ . '/../assets/img/logo_klinik.jpg';
 
         if(file_exists($logo))
         {

@@ -3,7 +3,7 @@
 $current = basename($_SERVER['PHP_SELF']);
 $request = $_SERVER['REQUEST_URI'];
 
-$isDashboard = $current === 'index.php' && !preg_match('#/(pasien|dokter|obat|layanan|pemeriksaan|pembayaran|laporan|pengaturan)/#', $request);
+$isDashboard = $current === 'index.php' && !preg_match('#/(pasien|dokter|obat|layanan|pemeriksaan|pembayaran|laporan|pengaturan|profile)/#', $request);
 $isPasien = strpos($request, '/pasien/') !== false;
 $isDokter = strpos($request, '/dokter/') !== false;
 $isObat = strpos($request, '/obat/') !== false;
@@ -12,6 +12,7 @@ $isPemeriksaan = strpos($request, '/pemeriksaan/') !== false;
 $isPembayaran = strpos($request, '/pembayaran/') !== false;
 $isLaporan = strpos($request, '/laporan/') !== false;
 $isPengaturan = strpos($request, '/pengaturan/') !== false;
+$isProfile = strpos($request, '/profile/') !== false;
 
 ?>
 
@@ -19,7 +20,7 @@ $isPengaturan = strpos($request, '/pengaturan/') !== false;
     <div class="sidebar-top">
         <a href="/klinik/index.php" class="brand">
             <div class="brand-icon">
-                <i class="fas fa-hospital"></i>
+                <img src="/klinik/assets/img/logo_klinik.jpg" alt="Logo Klinik" class="brand-logo-img">
             </div>
 
             <div class="brand-text">
@@ -100,6 +101,11 @@ $isPengaturan = strpos($request, '/pengaturan/') !== false;
 
     <div class="sidebar-footer">
         <div class="sidebar-divider"></div>
+
+        <a href="/klinik/profile/index.php" class="footer-link <?= $isProfile ? 'active' : '' ?>">
+            <i class="fas fa-user-circle"></i>
+            <span>Profil Saya</span>
+        </a>
 
         <a href="/klinik/pengaturan/index.php" class="footer-link <?= $isPengaturan ? 'active' : '' ?>">
             <i class="fas fa-gear"></i>

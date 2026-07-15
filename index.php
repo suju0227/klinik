@@ -81,6 +81,26 @@ $dataBulan = mysqli_fetch_assoc($qBulan);
 
 $pendapatanBulan = $dataBulan['total'];
 
+/* ===========================
+   AKTIVITAS TERBARU
+=========================== */
+
+$aktivitas = mysqli_query(
+    $koneksi,
+    "SELECT
+        pm.id_pemeriksaan,
+        ps.nama_pasien,
+        dk.nama_dokter,
+        pm.tanggal_periksa,
+        pm.keluhan,
+        pm.diagnosa
+    FROM pemeriksaan pm
+    JOIN pasien ps ON pm.id_pasien = ps.id_pasien
+    JOIN dokter dk ON pm.id_dokter = dk.id_dokter
+    ORDER BY pm.id_pemeriksaan DESC
+    LIMIT 5"
+);
+
 include "layout/header.php";
 ?>
 

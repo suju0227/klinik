@@ -49,7 +49,7 @@ $pdf->SetMargins(5,5,5);
 // LOGO
 // ================================
 
-$logo="../assets/img/logo.png";
+$logo="../assets/img/logo_klinik.jpg";
 
 if(file_exists($logo))
 {
