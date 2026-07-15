@@ -119,7 +119,7 @@ a:hover{
 =========================== */
 
 .wrapper{
-    display:flex;
+    display:block;
     width:100%;
     min-height:100vh;
 }
@@ -129,12 +129,10 @@ a:hover{
 =========================== */
 
 .main{
-    flex:1;
     margin-left:280px;
     padding:32px;
     transition:margin-left var(--transition-normal), padding var(--transition-normal);
 }
-
 /* ===========================
         CARD
 =========================== */
