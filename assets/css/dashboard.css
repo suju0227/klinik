@@ -58,18 +58,14 @@
 ===================================================== */
 
 .hero-dashboard{
-    background:
-    linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-    );
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%) !important;
+    border: none !important;
     border-radius: var(--radius-2xl);
     padding:45px;
     color:#fff;
     overflow:hidden;
     position:relative;
-    box-shadow: 0 20px 40px rgba(13, 148, 136, 0.2);
+    box-shadow: 0 10px 25px rgba(13, 148, 136, 0.15) !important;
 }
 
 /* efek lingkaran */
@@ -337,7 +333,7 @@
 
 .stats-card:hover{
     transform:translateY(-4px);
-    box-shadow: var(--shadow-soft-hover);
+    box-shadow: var(--shadow-hover);
 }
 
 /* Glow Effect */
@@ -558,7 +554,7 @@
 
 .finance-card:hover{
     transform:translateY(-4px);
-    box-shadow: var(--shadow-soft-hover);
+    box-shadow: var(--shadow-hover);
 }
 
 .finance-card::before{
@@ -719,12 +715,13 @@
     overflow:hidden;
     box-shadow: var(--shadow-soft);
     transition: var(--transition-normal);
+    border: 1px solid var(--border-strong);
     height:100%;
 }
 
 .chart-card:hover{
     transform:translateY(-4px);
-    box-shadow: var(--shadow-soft-hover);
+    box-shadow: var(--shadow-hover);
 }
 
 /* ==========================================
@@ -1562,10 +1559,9 @@ canvas{
 }
 
 .hero-dashboard{
-    background:
-        linear-gradient(135deg, rgba(13,148,136,.98), rgba(15,23,42,.92));
-    border:1px solid rgba(255,255,255,.08);
-    box-shadow:0 24px 48px rgba(13,148,136,.18);
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%) !important;
+    border: none !important;
+    box-shadow: 0 10px 25px rgba(13, 148, 136, 0.15) !important;
 }
 
 .hero-dashboard::before,
@@ -1600,16 +1596,55 @@ canvas{
     box-shadow:inset 0 1px 0 rgba(255,255,255,.10);
 }
 
-.stats-card,
-.finance-card,
+.hero-clock h1,
+.hero-clock #jam {
+    color: #ffffff !important;
+    text-shadow: none !important;
+    font-weight: 700;
+}
+
+.hero-clock h5,
+.hero-clock h4,
+.hero-clock p {
+    color: #ccfbf1 !important;
+}
+
+.hero-clock hr {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Light / Solid background for normal dashboard cards */
 .chart-card,
 .activity-card,
 .quick-card-container,
-.clinic-card{
-    border-radius:20px;
-    border:1px solid rgba(226,232,240,.95);
-    background:rgba(255,255,255,.96);
-    box-shadow:0 16px 35px rgba(15,23,42,.06);
+.quick-box,
+.clinic-card {
+    background: var(--surface) !important;
+    border: 1px solid var(--border-strong) !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: var(--shadow-soft) !important;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Base style for gradient statistics and finance cards in refinement */
+.stats-card,
+.finance-card {
+    border: none !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: var(--shadow-soft) !important;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Hover effects for all cards - modern light hover */
+.stats-card:hover,
+.finance-card:hover,
+.chart-card:hover,
+.activity-card:hover,
+.quick-card-container:hover,
+.quick-box:hover,
+.clinic-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-hover) !important;
 }
 
 .stats-card{
@@ -1622,7 +1657,7 @@ canvas{
 }
 
 .stats-label{
-    color:var(--slate-500);
+    color: rgba(255, 255, 255, 0.8) !important;
     font-size:12px;
     text-transform:uppercase;
     letter-spacing:.04em;
@@ -1630,29 +1665,49 @@ canvas{
 
 .stats-card h2,
 .stats-card h4{
-    color:var(--slate-900);
+    color: #fff !important;
 }
 
-.stats-icon{
-    background:linear-gradient(135deg, rgba(13,148,136,.14), rgba(16,185,129,.12));
-    color:var(--primary);
+.stats-icon,
+.finance-icon,
+.quick-icon {
+    background: rgba(16, 185, 129, 0.15) !important;
+    color: var(--primary) !important;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.1) !important;
+}
+
+.stats-icon i,
+.finance-icon i,
+.quick-icon i {
+    color: var(--primary) !important;
+}
+
+/* Stats/Finance icons on dark backgrounds look better with light background & icon */
+.stats-card .stats-icon,
+.finance-card .finance-icon {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+    box-shadow: none !important;
+}
+.stats-card .stats-icon i,
+.finance-card .finance-icon i {
+    color: #fff !important;
 }
 
 .finance-card{
     padding:22px;
 }
 
-.finance-icon{
-    background:linear-gradient(135deg, rgba(13,148,136,.14), rgba(16,185,129,.12));
-    color:var(--primary);
-}
-
 .finance-content small{
-    color:var(--slate-500);
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .finance-content h2{
-    color:var(--slate-900);
+    color: #fff !important;
+}
+
+.finance-content span {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .chart-card{
@@ -1664,13 +1719,17 @@ canvas{
 }
 
 .chart-header h4{
-    color:var(--slate-900);
+    color: var(--slate-800) !important;
+}
+
+.chart-header small {
+    color: var(--slate-500) !important;
 }
 
 .chart-body{
-    background:linear-gradient(180deg, rgba(248,250,252,.92), rgba(255,255,255,.96));
+    background: transparent !important;
     border-radius:18px;
-    border:1px solid var(--slate-100);
+    border:1px solid var(--border-strong) !important;
     min-height:320px;
     padding:18px;
 }
@@ -1685,26 +1744,57 @@ canvas{
 }
 
 .timeline-content{
-    background:var(--slate-50);
-    border:1px solid var(--slate-200);
+    background: var(--slate-50) !important;
+    border: 1px solid var(--border-strong) !important;
+}
+
+.timeline-content h6 {
+    color: var(--slate-800) !important;
+}
+
+.timeline-content p {
+    color: var(--slate-500) !important;
+}
+
+.timeline-content span {
+    color: var(--slate-400) !important;
+}
+
+.timeline-content:hover {
+    background: var(--slate-100) !important;
+    border-color: var(--border-strong) !important;
 }
 
 .quick-card-container{
     padding:22px;
 }
 
-.quick-box{
-    border:1px solid var(--slate-200);
-    background:linear-gradient(180deg, #fff, var(--slate-50));
+.quick-box h5 {
+    color: var(--slate-800) !important;
 }
 
-.quick-icon{
-    background:linear-gradient(135deg, rgba(13,148,136,.14), rgba(16,185,129,.12));
-    color:var(--primary);
+.quick-box p {
+    color: var(--slate-500) !important;
 }
 
-.clinic-card{
-    background:linear-gradient(180deg, #fff, var(--slate-50));
+.clinic-card h3 {
+    color: var(--slate-800) !important;
+}
+
+.clinic-card p {
+    color: var(--slate-500) !important;
+}
+
+.clinic-card table td {
+    color: var(--slate-700) !important;
+}
+
+.section-title h4 {
+    color: var(--slate-800) !important;
+}
+
+.section-title small {
+    color: var(--slate-500) !important;
 }
 
 .badge{
@@ -1735,6 +1825,7 @@ canvas{
     .chart-card,
     .activity-card,
     .quick-card-container,
+    .quick-box,
     .clinic-card{
         border-radius:18px;
     }
