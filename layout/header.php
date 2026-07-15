@@ -50,6 +50,6 @@ if (!isset($pageTitle) || $pageTitle === 'Sistem Manajemen Klinik') {
 <link rel="stylesheet" href="<?= $basePath ?>assets/css/form.css">
 <link rel="stylesheet" href="<?= $basePath ?>assets/css/responsive.css">
 
-<link rel="stylesheet" href="<?= $basePath ?>assets/css/tailwind.css">
+<link rel="stylesheet" href="<?= $basePath ?>assets/css/tailwind.css?v=<?= filemtime(__DIR__ . '/../assets/css/tailwind.css') ?>">
 </head>
 <body class="app-shell">
