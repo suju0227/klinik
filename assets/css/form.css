@@ -213,29 +213,29 @@ textarea.form-control {
 /* Valid Validation States */
 .form-control.is-valid,
 .was-validated .form-control:valid {
-    border-color: var(--secondary) !important; /* Emerald 500 */
+    border-color: #10b981 !important;
 }
 
 .form-control.is-valid:focus,
 .was-validated .form-control:valid:focus {
-    border-color: var(--secondary) !important;
+    border-color: #10b981 !important;
     box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15) !important;
 }
 
 .form-select.is-valid,
 .was-validated .form-select:valid {
-    border-color: var(--secondary) !important;
+    border-color: #10b981 !important;
 }
 
 .form-select.is-valid:focus,
 .was-validated .form-select:valid:focus {
-    border-color: var(--secondary) !important;
+    border-color: #10b981 !important;
     box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15) !important;
 }
 
 .form-check-input.is-valid,
 .was-validated .form-check-input:valid {
-    border-color: var(--secondary) !important;
+    border-color: #10b981 !important;
 }
 
 .form-check-input.is-valid:focus,

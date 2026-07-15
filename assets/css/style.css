@@ -11,6 +11,9 @@
     --primary-hover: #0f766e;
     --secondary: #0ea5e9;
     --secondary-hover: #0284c7;
+    --success: #10b981;
+    --success-hover: #059669;
+    --hover: rgba(13, 148, 136, 0.04);
 
     --slate-50: #f8fafc;
     --slate-100: #f1f5f9;
@@ -370,7 +373,7 @@ a:hover{
 =========================== */
 
 .bg-success {
-    background-color: var(--secondary) !important;
+    background-color: var(--success) !important;
 }
 
 .bg-danger {
