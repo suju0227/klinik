@@ -6,19 +6,23 @@
 .card.card-glass{
     border-radius:var(--radius-2xl) !important;
     overflow:hidden;
+    border: 1px solid var(--border-strong) !important;
+    background: var(--surface) !important;
+    box-shadow: var(--shadow-soft) !important;
 }
 
 .card.card-glass .card-header{
     padding:1.15rem 1.25rem;
-    border-bottom:1px solid rgba(255,255,255,.12);
+    border-bottom:1px solid var(--border-strong);
+    background: var(--slate-50);
 }
 
 .card-header.bg-success{
-    background:linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover)) !important;
 }
 
 .card.card-glass .card-body{
-    background:rgba(255,255,255,.96);
+    background: var(--surface);
 }
 
 .form-label{
@@ -30,12 +34,12 @@
 .form-control,
 .form-select {
     color: var(--slate-800);
-    border-color: var(--border-subtle);
+    border: 1px solid var(--border-strong);
     border-radius: var(--radius-md);
     min-height: 48px;
     padding: .75rem .95rem;
     background-color: var(--surface);
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .form-control::placeholder {
@@ -45,7 +49,8 @@
 .form-control:focus,
 .form-select:focus{
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.14);
+    box-shadow: var(--shadow-ring);
+    outline: 0;
 }
 
 textarea.form-control {
